@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Navigasi</title>
+    <style>
+        
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            background-color: #007bff;
+            padding: 10px;
+        }
+
+    
+        .horizontal {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .horizontal li {
+            margin: 0 15px;
+        }
+
+        .horizontal a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+
+        .horizontal a:hover {
+            background-color: #0056b3;
+            border-radius: 5px;
+        }
+
+       
+        .content {
+            padding: 20px;
+            display: none; 
+        }
+
+        .content.active {
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="menu">
+        <ul class="horizontal">
+            <li><a href="#" onclick="showContent('beranda')">Beranda</a></li>
+            <li><a href="#" onclick="showContent('tentang')">Tentang Kami</a></li>
+            <li><a href="#" onclick="showContent('hiburan')">Hiburan</a></li>
+            <li><a href="#" onclick="showContent('kontak')">Kontak</a></li>
+            <li><a href="#" onclick="showContent('login')">Login</a></li>
+        </ul>
+    </nav>
+
+
+    <div id="beranda" class="content active">
+        <h1>Selamat Datang di Beranda</h1>
+        <p>Ini adalah halaman utama.</p>
+    </div>
+
+    <div id="tentang" class="content">
+        <h1>Tentang Kami</h1>
+        <p>Ini adalah halaman tentang kami.</p>
+    </div>
+
+    <div id="hiburan" class="content">
+        <h1>Hiburan</h1>
+        <p>Selamat datang di halaman Hiburan! Nikmati konten menarik di sini.</p>
+    </div>
+
+    <div id="kontak" class="content">
+        <h1>Kontak</h1>
+        <p>Hubungi kami melalui email: contoh@email.com.</p>
+    </div>
+
+    <div id="login" class="content">
+        <h1>Login</h1>
+        <p>Silakan masuk ke akun Anda.</p>
+    </div>
+
+    <script>
+        function showContent(id) {
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
+            });
+
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
